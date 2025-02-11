@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebra Undersøkelse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Undersøkelse</h2>
+    <form id="surveyForm">
+        <div class="question">1. Hvor gammel er du?     : <input type="text" name="q1" required></div>
+        <div class="question">2. Liker du å reise?: <input type="checkbox" name="q5"></div> 
+        <div class="question">3. Ditt kjønn?:
+            <select name="q3" required>
+                <option value="Mann">Mann</option>
+                <option value="Kvinne">Kvinne</option>
+            </select>
+        </div>
+        <div class="question">4. Din favorittfarge?: <input type="text" name="q4"></div>
+        <div class="question">5. Hva er hobbyen din?: <input type="number" name="q2" required></div>
+        <div class="question">6. Hvilken flaske kapasitet er praktisk for deg?: <input type="text" name="q6"></div>
+        <div class="question">7. Hvordan holder flasken til daglig bruk? <input type="text" name="q7"></div>
+        <div class="question">8.  Hvor praktisk er det å bære flasken med deg?: <input type="text" name="q8"></div>
+        <div class="question">9. Har du lagt merke til endringer i materialet (f.eks. lukt, deformasjon)?
+            <label><input type="radio" name="q9" value="Ja" required> Ja</label>
+            <label><input type="radio" name="q9" value="Nei" required> Nei</label>
+            <label><input type="radio" name="q9" value="Ikke siker" required> Ikke siker</label>
+            </select>
+        <div class="question">10. Er flasken lett å brette og brette ut?: 
+            <label><input type="radio" name="q10" value="Ja" required> Ja</label>
+            <label><input type="radio" name="q10" value="Nei" required> Nei</label>
+        <div class="question">11. Er du fornøyd med produktet vårt? 
+            <label><input type="radio" name="q11" value="Ja" required> Ja</label>
+            <label><input type="radio" name="q11" value="Nei" required> Nei</label>
+        </div>
+        <button type="submit">Sende</button>
+    </form>
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('takk for din tid');
+        });
+    </script>
+</body>
+</html>

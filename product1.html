@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FE125</title>
+    <style>
+                body { font-family: Arial, sans-serif; text-align: center; }
+        .product-container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; }
+        .carousel { position: relative; max-width: 100%; }
+        .carousel img { width: 80%; max-width: 300px; display: none; }
+        .carousel img.active { display: block; margin: auto; }
+        .prev, .next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .price { font-size: 24px; color: red; margin: 10px 0; }
+        .buy-button { background: green; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+        .options { margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <h1>sammenleggbar flaske FE125</h1>
+        <div class="carousel">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <img src="img/3.jpg" alt="Продукт" class="active">
+            <img src="img/2.jpg" alt="Продукт">
+            <img src="img/1.jpg" alt="Продукт">
+            <img src="img/4.jpg" alt="Продукт">
+            <img src="img/5.jpg" alt="Продукт">
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+        <p class="price">Pris: 299kr</p>
+        <a href="video.html">se video</a>
+        <p>Sammenleggbar silikonflaske, designet for kompakt reise, sport og bare for komfortabel bruk.</p>
+            <p>Materiale: silikon</p>
+           <p> Volum: 0,5L, 0,8L, 1L</p>
+            <p>Farger: svart, grå, hvit, blå</p>
+        
+        <div class="options">
+            <div class="options">
+                <label for="color">Velg Farger:</label>
+                <select id="color">
+                    <option>svart</option>
+                    <option>grå</option>
+                    <option>hvit</option>
+                    <option>blå</option>
+                </select>
+            </div>
+            
+            <div class="options">
+                <label for="size">Velg Volum:</label>
+                <select id="size">
+                    <option>0.5L</option>
+                    <option>0.8L</option>
+                    <option>1L</option>
+    
+            </select>
+        </div>
+        
+        <a href="buy.html" class="buy-button">Betale</a>
+    </div>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel img');
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
+</body>
+</html>
